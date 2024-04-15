@@ -19,3 +19,5 @@ It's not perfect, there are a lot of issues:
 -only supports 16 total assembly instructions because of the ROM design
 -unused files
 -and more
+
+I tried to include everythin I used. The CPUv1_top_tb.vhd file is the testbench I used to verify the instructions being carried out. All the other vhd files are most of the components I implemented by writing code. The only one not here is the RAM, for which I used an IP block with Vivado's IP block generator.
