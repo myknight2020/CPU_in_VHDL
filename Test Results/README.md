@@ -14,9 +14,14 @@ addra: address to read/write from/to RAM
 
 Explanation
 
-PC_out and ROM_out denote which instruction is currently being executed. Each instruction was made to last for 3 clock cycles because accessing the register file and RAM takes 1 and 2 clock cycles, respectively. So, every instruciton is about 60ns in this example.
+PC_out and ROM_out denote which instruction is currently being executed. Each instruction was made to last for 3 clock cycles because accessing the register file and RAM takes 1 and 2 clock cycles, respectively. So, every instruciton is about 60ns in this example. R0 is hard-coded to always be 0.
 
 -- LW R3, R0(1) ; storing 2 into R3
+relevant signals: 
+ROM_out: shows the above instruction
+wdata: shows what data is being written to the specified register
+waddr: shows which register wdata is being written to
+raddr1: shows which address to 
 
 
 -- OR R4, R2, R3 ; 7 or 2 => 7 (R4)
