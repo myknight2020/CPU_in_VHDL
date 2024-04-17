@@ -14,4 +14,6 @@ addra: address to read/write from/to RAM
 
 Explanation
 
+PC_out and ROM_out denote which instruction is currently being executed. Each instruction was made to last for 3 clock cycles because executing reading from the register file and accessing RAM takes 1 and 2 clock cycles, respectively.
 
+The first instruction is 
