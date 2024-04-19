@@ -41,20 +41,22 @@ end program_counter;
 
 architecture Behavioral of program_counter is
 
-signal instruction_counter : unsigned(4 downto 0) := "00000";
-signal cycle_counter : unsigned(1 downto 0) := "00";
+--signal instruction_counter : unsigned(4 downto 0) := "00000";
+--signal cycle_counter : unsigned(1 downto 0) := "00";
 
 begin
     
-    process(clk) begin
+    process(clk) 
+    variable cycle_counter : natural range 0 to 3;
+    begin    
         if rising_edge(clk) then
             if pc_in = "01111" then
                 pc_out <= "00000";
-            elsif cycle_counter = "10" then
+            elsif cycle_counter = 2 then
                 pc_out <= pc_in;
-                cycle_counter <= "00";
+                cycle_counter := 0;
             else
-                cycle_counter <= cycle_counter + 1;
+                cycle_counter := cycle_counter + 1;
             end if;
         end if;
     end process;
